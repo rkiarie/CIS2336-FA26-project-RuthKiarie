@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The new UH Sugar Land Student Center: study rooms, lounges, events and student services.">
+  <title>Home | UH Sugar Land Student Center</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">UH Sugar Land <span>Student Center</span></a>
+      <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false">&#9776; Menu</button>
+      <!-- The menu links are added by script.js (buildNavigation) -->
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation"></nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" style="background-image: url('https://picsum.photos/seed/uhsl-hero/1600/700');">
+      <div class="container">
+        <h1>Welcome to the UH Sugar Land Student Center</h1>
+        <p>A new home on campus to study, meet up, recharge and get involved, opening for Cougars in Fort Bend County.</p>
+        <a class="btn btn-light" href="roombooking.html">Book a Study Room</a>
+      </div>
+    </section>
+
+    <!-- What's inside -->
+    <section id="features">
+      <div class="container">
+        <h2>What's Inside</h2>
+        <p class="section-intro">The center is built around what Sugar Land students asked for: quiet places to study, open spaces to connect, and help when they need it.</p>
+        <div class="grid">
+          <article class="card">
+            <img src="https://picsum.photos/seed/uhsl-rooms/600/400" alt="Students studying together around a table" loading="lazy">
+            <div class="card-body">
+              <h3>Bookable Rooms</h3>
+              <p>Five rooms, from two-person study pods to a 16-seat conference room, with screens and whiteboards.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/uhsl-lounge/600/400" alt="Open lounge with comfortable seating" loading="lazy">
+            <div class="card-body">
+              <h3>Cougar Lounge</h3>
+              <p>Open seating, charging stations and campus Wi-Fi for the time between classes.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/uhsl-cafe/600/400" alt="Coffee and snacks at the cafe counter" loading="lazy">
+            <div class="card-body">
+              <h3>Red &amp; White Cafe</h3>
+              <p>Coffee, grab-and-go meals and snacks, with student pricing.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/uhsl-events/600/400" alt="Students attending a campus event" loading="lazy">
+            <div class="card-body">
+              <h3>Events &amp; Orgs</h3>
+              <p>Space for student organizations, career fairs, workshops and game nights.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video tour -->
+    <section id="tour" class="alt">
+      <div class="container two-col">
+        <div>
+          <h2>Take a Quick Look</h2>
+          <p>Watch a short preview of the kind of open, light-filled space we're building for the student center.</p>
+          <p>The center sits at the heart of the Sugar Land campus, a short walk from the academic buildings and parking.</p>
+          <a class="btn" href="FAQ.html">Read the FAQ</a>
+        </div>
+        <div class="video-wrap">
+          <!-- Remotely hosted video, embedded with the HTML5 video element -->
+          <video controls muted playsinline preload="metadata"
+                 poster="https://picsum.photos/seed/uhsl-poster/800/450">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hours -->
+    <section id="hours">
+      <div class="container">
+        <h2>Hours <small id="open-status" style="font-size: 1rem; margin-left: 8px;"></small></h2>
+        <table class="hours-table">
+          <caption class="skip-caption" style="text-align:left; color: var(--muted); padding-bottom: 8px;">Regular semester hours</caption>
+          <thead>
+            <tr><th scope="col">Day</th><th scope="col">Hours</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Monday - Friday</td><td>7:00 AM - 10:00 PM</td></tr>
+            <tr><td>Saturday</td><td>9:00 AM - 5:00 PM</td></tr>
+            <tr><td>Sunday</td><td>12:00 PM - 6:00 PM</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Developer Contact (required section) -->
+    <section id="developer-contact" class="alt">
+      <div class="container">
+        <h2>Developer Contact</h2>
+        <div class="contact-card">
+          <!-- TODO: replace with your real name and UH email -->
+          <p><strong>Name:</strong> </p>
+          <p><strong>UH Email:</strong> <a href="mailto:rkiarie@cougarnet.uh.edu">rkiarie@cougarnet.uh.edu</a></p>
+          <p><strong>Course:</strong> CIS 2336, Fall 2026</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span class="js-year"></span> UH Sugar Land Student Center (class project)</p>
+      <p>14000 University Blvd, Sugar Land, TX</p>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="Back to top">&#8593;</button>
+</body>
+</html>

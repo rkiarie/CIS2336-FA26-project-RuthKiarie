@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="References and AI prompts used to build the UH Sugar Land Student Center website.">
+  <title>References | UH Sugar Land Student Center</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">UH Sugar Land <span>Student Center</span></a>
+      <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false">&#9776; Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation"></nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-banner">
+      <div class="container">
+        <h1>References &amp; AI Prompts</h1>
+        <p>Sources, media credits and the AI prompts used while building this site.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <h2>AI Prompts</h2>
+        <p class="section-intro">
+          As the project guidelines require, every prompt I gave an AI tool is listed below,
+          along with what I did with the result.
+        </p>
+
+        <div class="prompt-log">
+          <!-- TODO: add one .prompt-entry for every prompt you use. Copy them word for word. -->
+          <article class="prompt-entry">
+            <h3>Prompt 1: Front-end starter</h3>
+            <p class="meta">Tool: Claude (Anthropic) &middot; Date: November 19, 2026</p>
+            <blockquote>I shared the project README, .gitignore, and the full "Web Project Assignment Phase 2: Front-end implementation" instructions and rubric (homepage with a dynamic navigation menu and a Developer Contact section, a FAQ page with 5 collapsible items, a room booking form for 5 rooms with validation, a reference page, and multimedia) and asked for help building the front-end.</blockquote>
+            <p><strong>How I used it:</strong> Used as a starting point for the page layout, styles.css, and script.js (dynamic menu, FAQ collapsibles, form validation). <!-- TODO: describe what you changed yourself --></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="container">
+        <h2>Media Credits</h2>
+        <ul class="ref-list">
+          <li>Placeholder photos: <a href="https://picsum.photos/" target="_blank" rel="noopener">Lorem Picsum</a> (images from Unsplash, loaded remotely).</li>
+          <li>Homepage video: "flower" sample clip, CC0, hosted by <a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a>.</li>
+          <li>Campus address and background: <a href="https://www.uh.edu/sugarland/" target="_blank" rel="noopener">University of Houston Sugar Land Campus</a>.</li>
+        </ul>
+
+        <h2 style="margin-top: 36px;">Technical References</h2>
+        <ul class="ref-list">
+          <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation" target="_blank" rel="noopener">MDN: Client-side form validation</a></li>
+          <li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/" target="_blank" rel="noopener">W3C WAI-ARIA: Accordion pattern</a> (FAQ collapsibles)</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="noopener">MDN: Fetch API</a></li>
+          <li><a href="https://expressjs.com/" target="_blank" rel="noopener">Express.js documentation</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span class="js-year"></span> UH Sugar Land Student Center (class project)</p>
+      <p>14000 University Blvd, Sugar Land, TX</p>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="Back to top">&#8593;</button>
+</body>
+</html>

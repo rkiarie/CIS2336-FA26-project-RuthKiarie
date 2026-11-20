@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book one of five rooms at the UH Sugar Land Student Center.">
+  <title>Room Booking | UH Sugar Land Student Center</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">UH Sugar Land <span>Student Center</span></a>
+      <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false">&#9776; Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation"></nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-banner">
+      <div class="container">
+        <h1>Book a Room</h1>
+        <p>Pick a room, choose a time, and we'll check whether it's available.</p>
+      </div>
+    </div>
+
+    <!-- The 5 room cards are added by script.js (renderRooms) -->
+    <section>
+      <div class="container">
+        <h2>Our Rooms</h2>
+        <p class="section-intro">Bookings run from 8:00 AM to 9:00 PM, up to 3 hours at a time, and up to 30 days ahead.</p>
+        <div id="room-grid" class="grid"></div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="container">
+        <h2>Booking Form</h2>
+        <p class="section-intro">Fields marked <span class="req">*</span> are required.</p>
+
+        <div class="form-card">
+          <!-- novalidate: script.js shows its own clear error messages,
+               while the HTML attributes still describe the rules -->
+          <form id="booking-form" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="fullName">Full name <span class="req">*</span></label>
+                <input id="fullName" name="fullName" type="text" autocomplete="name" required
+                       minlength="2" maxlength="60" aria-describedby="fullName-error">
+                <span id="fullName-error" class="error-msg" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">UH email <span class="req">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required
+                       placeholder="name@cougarnet.uh.edu" aria-describedby="email-hint email-error">
+                <span id="email-hint" class="hint">Must end in @uh.edu or @cougarnet.uh.edu</span>
+                <span id="email-error" class="error-msg" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="psid">PeopleSoft ID (PSID) <span class="req">*</span></label>
+                <input id="psid" name="psid" type="text" inputmode="numeric" required
+                       pattern="\d{7}" maxlength="7" aria-describedby="psid-hint psid-error">
+                <span id="psid-hint" class="hint">7 digits</span>
+                <span id="psid-error" class="error-msg" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="room">Room <span class="req">*</span></label>
+                <select id="room" name="room" required aria-describedby="room-error">
+                  <option value="">Select a room</option>
+                  <!-- Options are added by script.js -->
+                </select>
+                <span id="room-error" class="error-msg" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="date">Date <span class="req">*</span></label>
+                <input id="date" name="date" type="date" required aria-describedby="date-error">
+                <span id="date-error" class="error-msg" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="attendees">Number of attendees <span class="req">*</span></label>
+                <input id="attendees" name="attendees" type="number" min="1" max="16" step="1" required
+                       aria-describedby="attendees-error">
+                <span id="attendees-error" class="error-msg" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="startTime">Start time <span class="req">*</span></label>
+                <input id="startTime" name="startTime" type="time" min="08:00" max="20:30" step="1800" required
+                       aria-describedby="startTime-error">
+                <span id="startTime-error" class="error-msg" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="endTime">End time <span class="req">*</span></label>
+                <input id="endTime" name="endTime" type="time" min="08:30" max="21:00" step="1800" required
+                       aria-describedby="endTime-error">
+                <span id="endTime-error" class="error-msg" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group full">
+                <label for="purpose">Purpose of booking (optional)</label>
+                <textarea id="purpose" name="purpose" rows="3" maxlength="200"
+                          aria-describedby="purpose-count purpose-error"></textarea>
+                <span id="purpose-count" class="hint">0/200</span>
+                <span id="purpose-error" class="error-msg" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group full">
+                <div class="form-group checkbox-row">
+                  <input id="agree" name="agree" type="checkbox" required aria-describedby="agree-error">
+                  <label for="agree">I agree to leave the room clean and to cancel if I can't make it. <span class="req">*</span></label>
+                </div>
+                <span id="agree-error" class="error-msg" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn" type="submit">Book Room</button>
+              <button class="btn btn-outline" type="reset">Clear Form</button>
+            </div>
+          </form>
+
+          <!-- Confirmation or decline message from the server -->
+          <div id="booking-result" class="result" role="status" tabindex="-1"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span class="js-year"></span> UH Sugar Land Student Center (class project)</p>
+      <p>14000 University Blvd, Sugar Land, TX</p>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="Back to top">&#8593;</button>
+</body>
+</html>
